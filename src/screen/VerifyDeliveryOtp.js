@@ -19,7 +19,7 @@ import BottomSheet, { BottomSheetView,BottomSheetBackdrop } from '@gorhom/bottom
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import SwipeButton from 'rn-swipe-button';
 
-const OrderDetailScreen = () => {
+const VerifyDeliveryOtpScreen = () => {
   const navigation = useNavigation();
   const bottomSheetRef = useRef(null);
 
@@ -246,7 +246,7 @@ const OrderDetailScreen = () => {
               
 
               <Text
-                style={{marginStart: '3%', fontFamily: 'urbanistmedium',fontSize:20,color:Colors.black}}>Pickup Details</Text>
+                style={{marginStart: '3%', fontFamily: 'urbanistmedium',fontSize:20,color:Colors.black}}>Verify Otp</Text>
                
             
             </View>
@@ -257,81 +257,7 @@ const OrderDetailScreen = () => {
         </View>
       </View>
 
-      <View
-        style={{justifyContent: 'center', alignItems: 'center', marginTop: 13}}>
-        <Text
-          style={{
-            fontSize: 17,
-            fontFamily: 'urbanistbold',
-            color: Colors.textcolor,
-            letterSpacing: 3,
-          }}>
-          SEASON RESTAURANTS
-        </Text>
-        <Text
-          numColumns={2}
-          style={{
-            color: Colors.navcolor,
-            fontFamily: 'urbanistmedium',
-            fontSize: 12,
-            marginStart: 3,
-            marginTop: 7,
-          }}>
-          BURGER • FAST FOOD • BIRYANI
-        </Text>
-
-        <View style={{flexDirection: 'row', alignItems: 'center',marginTop:5}}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              padding: 3,
-              backgroundColor: Colors.dark_green,
-              justifyContent: 'center',
-              borderRadius: 5,
-              marginEnd: 3,
-            }}>
-            <Image
-              style={{
-                width: 10,
-                height: 10,
-                marginStart: '4%',
-                marginTop: '2%',
-                marginEnd: '4',
-                marginEnd: '4%',
-                tintColor: Colors.white,
-              }}
-              source={require('../../assets/star.png')}
-            />
-
-            <Text
-              numColumns={2}
-              style={{
-                color: Colors.white,
-                fontFamily: 'urbanistbold',
-                fontSize: 13,
-                marginStart: 3,
-              }}>
-              4.5
-            </Text>
-          </View>
-
-          <View>
-          <Text
-          style={{
-            fontSize: 14,
-            fontFamily: 'urbanistmedium',
-            color: Colors.textcolor,
-           
-          }}>
-          18.2K ratings
-        </Text>
-          </View>
-        </View>
-
-
-        
-      </View>
+    
 
 
       <View style={{width:'94%',alignSelf:'center',marginTop:5,height:1,borderTopColor:Colors.dark_gray,borderTopWidth:1,borderStyle:'dashed'}}>
@@ -411,10 +337,37 @@ const OrderDetailScreen = () => {
 
 
 
-<Text
-                style={{marginTop: '5%', fontFamily: 'urbanistextrabold',fontSize:15,color:Colors.navcolor,alignSelf:'center',letterSpacing:2}}>ESTIMATED EARNING - ₹ 35</Text>
+             
               
-  
+      <View style={{position:'absolute',bottom:10,width:'90%',alignSelf:'center',alignItems:'center'}}>
+
+
+        <TextInput inputMode='numeric'  maxLength={4} style={{backgroundColor:Colors.altra_gray,paddingStart:10,paddingRight:10,borderRadius:10,borderWidth:1}} placeholder='Enter 4 digit OTP here'></TextInput>
+
+      <Text
+                style={{marginTop: '3%', fontFamily: 'urbanistregular',fontSize:13,color:Colors.red,alignSelf:'center'}}>*Ask custimer for OTP sent by DELIGO</Text>
+            
+<SwipeButton
+      containerStyles={{borderRadius: 5,width:'100%'}}
+      height={30}
+      onSwipeFail={() => {
+
+      }}
+      onSwipeStart={() =>{
+
+      } }
+      onSwipeSuccess={() =>
+       {
+         navigation.navigate("DeliverProductScreen")
+       }
+      }
+      railBackgroundColor={Colors.dark_gray}
+      railStyles={{borderRadius: 5}}
+      title="Verify OTP"
+    />
+
+</View>
+
      
              
     </GestureHandlerRootView>
@@ -428,4 +381,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default OrderDetailScreen;
+export default VerifyDeliveryOtpScreen;

@@ -11,6 +11,16 @@ import UploadVehicleDocumennt from '../screen/UploadVehicleDocument';
 import HomeScreen from '../screen/HomeScreen';
 import OrderDetailScreen from '../screen/OrderDetail';
 import VendorDirectionScreen from '../screen/VendorDirectionScreen';
+import OrderPickupScreen from '../screen/OrderPickup';
+import CustomerDirectionScreen from '../screen/CustomerDirectionScreen';
+import VerifyDeliveryOtpScreen from '../screen/VerifyDeliveryOtp';
+import DeliverProductScreen from '../screen/DeliverProduct';
+import AccountScreen from '../screen/AccountScreen';
+import OrderHistoryScreen from '../screen/OrderHistory';
+import NotificationScreen from '../screen/NotificationScreen';
+import EarningScreen from '../screen/EarningScreen';
+import ReviewAndRatingScreen from '../screen/ReviewAndRating';
+import EditAccountScreen from '../screen/EditAccountScreen';
 
 
 
@@ -35,6 +45,17 @@ const AppNavigator = () => {
                <Stack.Screen name="HomeScreen" component={HomeScreen}/>
                <Stack.Screen name="OrderDetailScreen" component={OrderDetailScreen}/>
                <Stack.Screen name="VendorDirectionScreen" component={VendorDirectionScreen}/>
+               <Stack.Screen name="OrderPickupScreen" component={OrderPickupScreen}/>
+               <Stack.Screen name="CustomerDirectionScreen" component={CustomerDirectionScreen}/>
+               <Stack.Screen name="VerifyDeliveryOtpScreen" component={VerifyDeliveryOtpScreen}/>
+               <Stack.Screen name="DeliverProductScreen" component={DeliverProductScreen}/>
+               <Stack.Screen name="AccountScreen" component={AccountScreen}/>
+               <Stack.Screen name="OrderHistoryScreen" component={OrderHistoryScreen}/>
+               <Stack.Screen name="NotificationScreen" component={NotificationScreen}/>
+               <Stack.Screen name="EarningScreen" component={EarningScreen}/>
+               <Stack.Screen name="ReviewAndRatingScreen" component={ReviewAndRatingScreen}/>
+
+               <Stack.Screen name="EditAccountScreen" component={EditAccountScreen}/>
 
 
             </Stack.Navigator>

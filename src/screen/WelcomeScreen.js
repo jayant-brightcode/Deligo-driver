@@ -16,15 +16,15 @@ const WelcomeScreen = ()=>{
 
     <StatusBar backgroundColor={Colors.brown}/>
 
-    <Image style={styles.backgroundImage} source={require('../../assets/welcom.jpg')}/>
+    <Image style={styles.backgroundImage} source={require('../../assets/welcom2.jpg')}/>
 
-    <Text style={{fontFamily:'urbanistextrabold',fontSize:26,color:Colors.textcolor,marginStart:10,marginTop:20}}>Work with us and {'\n'}grow your career!</Text>
+    <Text style={{fontFamily:'urbanistextrabold',fontSize:26,color:Colors.textcolor,marginStart:10,marginTop:20}}>Work with Deligo and {'\n'}grow your career!</Text>
 
-     <View style={{width:'94%',alignSelf:'center',position:'absolute',bottom:10,backgroundColor:Colors.dark_green,padding:10,borderRadius:10}}>
+     <View style={{width:'94%',alignSelf:'center',position:'absolute',bottom:10,backgroundColor:Colors.white,padding:10,borderRadius:10}}>
         <TouchableWithoutFeedback onPress={()=>{
                 navigation.navigate("LoginScreen")
         }} style={{width:'100%'}}>
-            <Text style={{color:Colors.white,fontFamily:'urbanistmedium',textAlign:'center'}} >GET STARTED</Text>
+            <Text style={{color:Colors.black,fontFamily:'urbanistmedium',textAlign:'center'}} >GET STARTED</Text>
         </TouchableWithoutFeedback>
 
      </View>

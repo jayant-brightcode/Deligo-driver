@@ -19,7 +19,7 @@ import BottomSheet, { BottomSheetView,BottomSheetBackdrop } from '@gorhom/bottom
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import SwipeButton from 'rn-swipe-button';
 
-const OrderDetailScreen = () => {
+const DeliverProductScreen = () => {
   const navigation = useNavigation();
   const bottomSheetRef = useRef(null);
 
@@ -411,10 +411,34 @@ const OrderDetailScreen = () => {
 
 
 
-<Text
-                style={{marginTop: '5%', fontFamily: 'urbanistextrabold',fontSize:15,color:Colors.navcolor,alignSelf:'center',letterSpacing:2}}>ESTIMATED EARNING - ₹ 35</Text>
+             
               
-  
+      <View style={{position:'absolute',bottom:10,width:'90%',alignSelf:'center',alignItems:'center'}}>
+
+      <Text
+                style={{marginTop: '3%', fontFamily: 'urbanistregular',fontSize:12,color:Colors.red,alignSelf:'center'}}>*Make sure to manually verify all the items before mark as delivered</Text>
+            
+<SwipeButton
+      containerStyles={{borderRadius: 5,width:'100%'}}
+      height={30}
+      onSwipeFail={() => {
+
+      }}
+      onSwipeStart={() =>{
+
+      } }
+      onSwipeSuccess={() =>
+       {
+         navigation.navigate("OrderHistoryScreen")
+       }
+      }
+      railBackgroundColor={Colors.dark_gray}
+      railStyles={{borderRadius: 5}}
+      title="Mark as Delivered"
+    />
+
+</View>
+
      
              
     </GestureHandlerRootView>
@@ -428,4 +452,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default OrderDetailScreen;
+export default DeliverProductScreen;

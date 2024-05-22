@@ -8,7 +8,7 @@ import SwipeButton from 'rn-swipe-button';
 
 import Colors from "../utils/Color";
 
-const VendorDirectionScreen =() =>{
+const CustomerDirectionScreen =() =>{
 
      const navigation = useNavigation()
     
@@ -139,6 +139,7 @@ const VendorDirectionScreen =() =>{
 
       <View
         style={{justifyContent: 'center', alignItems: 'center', marginTop: 13,marginBottom:20}}>
+        <View style={{flexDirection:'row',alignItems:'center'}}>
         <Text
           style={{
             fontSize: 17,
@@ -146,18 +147,24 @@ const VendorDirectionScreen =() =>{
             color: Colors.textcolor,
             letterSpacing: 3,
           }}>
-          SEASON RESTAURANTS
+          RAKESH KUMAR
         </Text>
+
+        <Text style={{padding:8,backgroundColor:Colors.dark_blue,color:Colors.white,fontFamily:'urbanistmedium',borderRadius:8,marginStart:10}}>Call Rakesh</Text>
+
+        </View>
+       
+    
         <Text
           numColumns={2}
           style={{
             color: Colors.navcolor,
             fontFamily: 'urbanistmedium',
-            fontSize: 12,
+            fontSize: 14,
             marginStart: 3,
             marginTop: 7,
           }}>
-          BURGER • FAST FOOD • BIRYANI
+          Ratu road , road number 9 , blue apratment , black gate
         </Text>
 
         <View style={{flexDirection: 'row', alignItems: 'center',marginTop:5}}>
@@ -210,6 +217,7 @@ const VendorDirectionScreen =() =>{
         </View>
 
        
+       
         
       </View>
 
@@ -224,12 +232,12 @@ const VendorDirectionScreen =() =>{
             } }
             onSwipeSuccess={() =>
              {
-               navigation.navigate("OrderPickupScreen")
+               navigation.navigate("VerifyDeliveryOtpScreen")
              }
             }
             railBackgroundColor={Colors.dark_gray}
             railStyles={{borderRadius: 5}}
-            title="Reached at vendor"
+            title="Reached at customer location"
           />
 
 </View>
@@ -271,4 +279,4 @@ const styles = StyleSheet.create({
 
 
 
-export default VendorDirectionScreen
+export default CustomerDirectionScreen

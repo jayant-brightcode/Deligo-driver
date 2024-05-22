@@ -6,7 +6,7 @@ import SwipeButton from 'rn-swipe-button';
 
 
 
-const HomeScreen = () =>{
+const OrderHistoryScreen = () =>{
     const navigation = useNavigation()
     const [status, setStatus] = useState('Offline');
 
@@ -225,7 +225,7 @@ const renderProducts = ({item})=>{
       navigation.navigate("OrderDetailScreen")
 
     }}>
-          <View style={{width:'90%',height:160,marginEnd:10,marginStart:10,borderTopColor:Colors.gray,borderTopWidth:0.7,marginBottom:15,backgroundColor:Colors.white,borderRadius:10,elevation:1,alignSelf:'center'}}>
+          <View style={{width:'90%',height:140,marginEnd:10,marginStart:10,borderTopColor:Colors.gray,borderTopWidth:0.7,marginBottom:15,backgroundColor:Colors.white,borderRadius:10,elevation:1,alignSelf:'center'}}>
 
 
             <View style={{width:'100%',flexDirection:'row'}}>
@@ -238,31 +238,27 @@ const renderProducts = ({item})=>{
              <Text numColumns={2} style={{color:Colors.red,fontFamily:'urbanistmedium',fontSize:13}}>Chicken Biryani</Text>
              <Text numColumns={2} style={{color:Colors.navcolor,fontFamily:'urbanistmedium',fontSize:13}}>QTY - 2</Text>
              <View style={{flexDirection:'row',alignItems:'center',marginTop:10,alignItems:'center'}}>
-             <Text numColumns={2} style={{color:Colors.navcolor,fontFamily:'urbanistmedium',fontSize:14,marginStart:3}}>Pickup -</Text>
-             <Image style={{ width: 16, height: 16,marginStart:4}} source={require('../../assets/clock.png')}></Image>
-             <Text numColumns={2} style={{color:Colors.navcolor,fontFamily:'urbanistmedium',fontSize:14,marginStart:3}}>5 Km</Text>
+             <Text numColumns={2} style={{color:Colors.textcolor,fontFamily:'urbanistmedium',fontSize:14,marginStart:3,backgroundColor:Colors.altra_gray}}>ORDER ID - DLG689696</Text>
+            
             
              </View>
-          
-          
+             
              </View>
 
-        
-
+             
             </View>
 
+            <View style={{flexDirection:'row',marginTop:10}}>
+              <Image style={{ width: 16, height: 16,marginStart:4}} source={require('../../assets/clock.png')}></Image>
+             <Text numColumns={2} style={{color:Colors.navcolor,fontFamily:'urbanistregular',fontSize:13,marginStart:3}}>5 nov 2027  7:23 pm</Text>
 
+              </View>
+          
           
           
     
                
-            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,alignItems:'center',width:'95%',alignSelf:'center'}}>
-
-              <Text style={{padding:9,fontFamily:'urbanistmedium',fontSize:14,backgroundColor:Colors.dark_green,color:Colors.white,borderRadius:8}}>Accept</Text>
-              <Text style={{padding:9,fontFamily:'urbanistmedium',fontSize:14,backgroundColor:Colors.red,color:Colors.white,borderRadius:8,marginStart:20}}>Reject</Text>
-
-
-              </View>
+           
 
          
 
@@ -297,73 +293,33 @@ const renderProducts = ({item})=>{
         <StatusBar backgroundColor={Colors.light_green}/>
        
             
-      
-        <View style={{height:'16%',backgroundColor:Colors.light_green}}>
-
-          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
-
-
-          <View style={{alignSelf:'center',padding:10,marginTop:'3%',flexDirection:'row',alignItems:'center'}}>
-
-            <Image style={{width:15,height:20,tintColor:Colors.red}}  source={require('../../assets/location_white.png')}/>
-            <View>
-            <Text style={{marginStart:'4%',fontFamily:'urbanistextrabold',fontSize:18,color:Colors.black}}>Nambkum Industrial Area</Text>
-
-            <Text style={{fontFamily:'urbanistregular',fontSize:13,color:Colors.black,marginStart:'3%'}}>Location - Ranchi</Text>
-
-            </View>
-
-            
-
-
-            </View>
-
           
+      
+
+        <View style={{height:'7%' ,backgroundColor:Colors.light_green}}>
+
+<View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+
+
+  <View style={{flexDirection:'row',alignItems:'center',width:'80%',height:'100%',padding:'3'}}>
 
 
 
-           <View style={{flexDirection:'row',marginEnd:10}}>
-           <TouchableWithoutFeedback  onPress={()=>{
-           navigation.navigate("NotificationScreen")
-          }}>
-            <Image style={{width:28,height:28,borderRadius:500,borderWidth:1,borderColor:Colors.black}}  source={require('../../assets/notification.png')}/>
+  <Image style={{width:30,height:20,marginStart:'4%',marginTop:'4%'}}  source={require('../../assets/arrow.png')}/>
 
-            </TouchableWithoutFeedback>
+  <View style={{marginStart:'2%',marginTop:'4%',height:'58%',width:'0.5%',backgroundColor:Colors.green_light_2}}></View>
+  <Text numberOfLines={1} style={{marginStart:'2%',marginTop:'3%',fontFamily:'urbanistmedium',marginStart:'5%',fontSize:16,color:Colors.textcolor}}>Order History</Text>
+  </View>
 
 
-            <TouchableWithoutFeedback  onPress={()=>{
-              navigation.navigate("AccountScreen")
-            }}>
-            <Image style={{width:28,height:28,marginStart:20,marginEnd:'1%',borderRadius:500,borderWidth:1,borderColor:Colors.black}}  source={require('../../assets/user.png')}/>
-
-            </TouchableWithoutFeedback>
+</View>
 
 
-           </View>
-
-           
-          </View>
 
 
-          <SwipeButton
-       
-        title={`Swipe to go ${status === 'Offline' ? 'Online' : 'Offline'}`}
-        onSwipeSuccess={handleSwipeSuccess}
-        thumbIconBackgroundColor="#FFFFFF"
-        thumbIconBorderColor="#000000"
-        railBackgroundColor= {Colors.light_green}
 
-        railFillBackgroundColor="#4CD964"
-        railFillBorderColor="#4CD964"
-      />
+</View>
 
-    
-
-
-        </View>
-        
-
-       
   
       
         
@@ -382,7 +338,7 @@ const renderProducts = ({item})=>{
         return (
           <View style={{ width: '95%', alignSelf: 'center', marginTop: '4%',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
             <View style={{width:'20%',height:1,borderTopColor:Colors.dark_gray,borderTopWidth:2,borderStyle:"dotted"}}></View>
-            <Text style={{ fontSize: 17, fontFamily: 'urbanistbold', color: Colors.textcolor,letterSpacing:3 }}>RECENT ORDERS</Text>
+            <Text style={{ fontSize: 17, fontFamily: 'urbanistbold', color: Colors.textcolor,letterSpacing:3 }}>ORDER HISTORY</Text>
             <View style={{width:'20%',height:1,borderTopColor:Colors.dark_gray,borderTopWidth:2,borderStyle:"dotted"}}></View>
 
           </View>
@@ -420,81 +376,9 @@ const renderProducts = ({item})=>{
 
          {/* navigation */}
         
-        <Animated.View
-      style={{
      
-        transform: [{translateY: translateY}],
+
     
-      }}>
-         {navVisible && (
- <View style={{width:'100%',position:'absolute',bottom:0,height:70,borderTopColor:Colors.gray,borderTopWidth:3,backgroundColor:Colors.white,justifyContent:'space-around',flexDirection:'row'}}>
- <View style={{flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:Colors.white,width:50}}>
-    <Image style={{width:23,height:23,tintColor:Colors.textcolor}}  source={require('../../assets/home.png')}/>
-    <Text style={{fontFamily:'urbanistmedium',fontSize:12}}>Home</Text>
- </View>
-
-
- <TouchableWithoutFeedback onPress={()=>{
-   navigation.navigate("NotificationScreen")
- }}>
-<View style={{flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:Colors.white,width:70,marginStart:10}}>
-    <Image style={{width:25,height:25,tintColor:Colors.textcolor}}  source={require('../../assets/notification.png')}/>
-    <Text style={{fontFamily:'urbanistmedium',fontSize:12}}>Notification</Text>
- </View>
- </TouchableWithoutFeedback>
-
-
-
-<TouchableWithoutFeedback onPress={()=>{
-   navigation.navigate("OrderHistoryScreen")
-}}>
-<View style={{flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:Colors.white,width:50,marginStart:10}}>
-    <Image style={{width:27,height:27,tintColor:Colors.textcolor}}  source={require('../../assets/order.png')}/>
-    <Text style={{fontFamily:'urbanistmedium',fontSize:12}}>Orders</Text>
- </View>
-
-</TouchableWithoutFeedback>
-
- <TouchableWithoutFeedback onPress={()=>{
-   navigation.navigate("AccountScreen")
- }}>
-<View style={{flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:Colors.white,width:50,marginStart:10}}>
-    <Image style={{width:27,height:27}}  source={require('../../assets/user.png')}/>
-    <Text style={{fontFamily:'urbanistmedium',fontSize:12}}>Account</Text>
- </View>
- </TouchableWithoutFeedback>
-
-
-</View>
-         )}
-         </Animated.View>
-
-
-         
-         <View style={{width:'90%',alignSelf:'center',elevation:3,backgroundColor:Colors.light_purple,height:70,position:'absolute',bottom:80,borderRadius:10,padding:5}}>
-
-                  <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-
-                    <View>
-                        <Text style={{fontFamily:'urbanistbold',color:Colors.red,marginStart:8,marginTop:4}}>Request Accepted</Text>
-                        <Text style={{fontFamily:'urbanistmedium',color:Colors.black,marginStart:8,marginTop:4}}>Season Restaurent</Text>
-
-                    </View>
-
-                    <View style={{marginEnd:20}}>
-                      <TouchableOpacity onPress={()=>{
-                        navigation.navigate("VendorDirectionScreen")
-                      }}>
-                      <Text style={{padding:8,backgroundColor:Colors.dark_green,marginTop:8,color:Colors.white,borderRadius:10}}>show details</Text>
-
-                      </TouchableOpacity>
-                    </View>
-
-                  </View>
-
-             
-         </View>
-
 
         
 
@@ -530,4 +414,4 @@ const style = StyleSheet.create({
 
 })
 
-export default HomeScreen
+export default OrderHistoryScreen
